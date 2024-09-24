@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'sportfriend_Meeting_list' %}">
+    Meeting Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>loaction_name</td><td>{{ object.loaction_name }}</td></tr>
+    <tr><td>longitude</td><td>{{ object.longitude }}</td></tr>
+    <tr><td>date_start</td><td>{{ object.date_start }}</td></tr>
+    <tr><td>description</td><td>{{ object.description }}</td></tr>
+    <tr><td>date_end</td><td>{{ object.date_end }}</td></tr>
+    <tr><td>uuid</td><td>{{ object.uuid }}</td></tr>
+    <tr><td>is_private</td><td>{{ object.is_private }}</td></tr>
+    <tr><td>latitude</td><td>{{ object.latitude }}</td></tr>
+    <tr><td>users_list</td><td>{{ object.users_list }}</td></tr>
+    <tr><td>category_id</td><td>{{ object.category_id }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

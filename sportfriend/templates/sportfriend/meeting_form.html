@@ -1,0 +1,86 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'sportfriend_Meeting_list' %}">
+    Meeting Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="last_updated">last_updated: </label>
+      <input class="form-control col-sm-10"
+         id="last_updated" type="datetime-local"
+         name="last_updated" value="{{ object.last_updated }}" disabled>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="created">created: </label>
+      <input class="form-control col-sm-10"
+         id="created" type="datetime-local"
+         name="created" value="{{ object.created }}" disabled>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="loaction_name">loaction_name: </label>
+      <input class="form-control col-sm-10"
+         id="loaction_name" type="text"
+         name="loaction_name" value="{{ object.loaction_name }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="longitude">longitude: </label>
+      <input class="form-control col-sm-10"
+         id="longitude" type="text"
+         name="longitude" value="{{ object.longitude }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="date_start">date_start: </label>
+      <input class="form-control col-sm-10"
+         id="date_start" type="datetime-local"
+         name="date_start" value="{{ object.date_start }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="description">description: </label>
+      <input class="form-control col-sm-10"
+         id="description" type="text"
+         name="description" value="{{ object.description }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="date_end">date_end: </label>
+      <input class="form-control col-sm-10"
+         id="date_end" type="datetime-local"
+         name="date_end" value="{{ object.date_end }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="uuid">uuid: </label>
+      <input class="form-control col-sm-10"
+         id="uuid" type="text"
+         name="uuid" value="{{ object.uuid }}" disabled>
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="is_private">is_private: </label>
+      <input class="form-control col-sm-10"
+         id="is_private" type="checkbox"
+         name="is_private" value="{{ object.is_private }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="latitude">latitude: </label>
+      <input class="form-control col-sm-10"
+         id="latitude" type="text"
+         name="latitude" value="{{ object.latitude }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="users_list">users_list: </label>
+      {{ form.users_list }}
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="category_id">category_id: </label>
+      {{ form.category_id }}
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

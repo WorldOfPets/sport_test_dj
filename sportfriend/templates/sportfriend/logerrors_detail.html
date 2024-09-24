@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'sportfriend_LogErrors_list' %}">
+    LogErrors Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>error_time</td><td>{{ object.error_time }}</td></tr>
+    <tr><td>user_id</td><td>{{ object.user_id }}</td></tr>
+    <tr><td>description</td><td>{{ object.description }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>type</td><td>{{ object.type }}</td></tr>
+    <tr><td>error_uuid</td><td>{{ object.error_uuid }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
