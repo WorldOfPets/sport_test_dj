@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'sportfriend_SportFriends_list' %}">
+    SportFriends Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>is_confirm</td><td>{{ object.is_confirm }}</td></tr>
+    <tr><td>user_fr_id</td><td>{{ object.user_fr_id }}</td></tr>
+    <tr><td>user_id</td><td>{{ object.user_id }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

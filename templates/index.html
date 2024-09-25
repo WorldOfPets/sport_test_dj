@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="m-2"><h4>sportfriend</h4></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'sportfriend_Chat_list' %}">Chat Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'sportfriend_Images_list' %}">Images Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'sportfriend_LogErrors_list' %}">LogErrors Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'sportfriend_Meeting_list' %}">Meeting Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'sportfriend_Message_list' %}">Message Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'sportfriend_News_list' %}">News Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'sportfriend_SportCategory_list' %}">SportCategory Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'sportfriend_SportFriends_list' %}">SportFriends Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'sportfriend_UserChat_list' %}">UserChat Listing</a></div>
+<div class="m-2"><a class="btn btn-light" href="{% url 'sportfriend_UserInfo_list' %}">UserInfo Listing</a></div>
+{% endblock %}

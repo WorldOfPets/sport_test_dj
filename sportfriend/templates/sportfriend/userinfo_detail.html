@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'sportfriend_UserInfo_list' %}">
+    UserInfo Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>profile_photo</td><td>{{ object.profile_photo }}</td></tr>
+    <tr><td>longitude</td><td>{{ object.longitude }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>description</td><td>{{ object.description }}</td></tr>
+    <tr><td>second_name</td><td>{{ object.second_name }}</td></tr>
+    <tr><td>uuid</td><td>{{ object.uuid }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>find_area</td><td>{{ object.find_area }}</td></tr>
+    <tr><td>latitude</td><td>{{ object.latitude }}</td></tr>
+    <tr><td>birthday</td><td>{{ object.birthday }}</td></tr>
+    <tr><td>sport_categories_list</td><td>{{ object.sport_categories_list }}</td></tr>
+    <tr><td>user_disliked_list</td><td>{{ object.user_disliked_list }}</td></tr>
+    <tr><td>user_id</td><td>{{ object.user_id }}</td></tr>
+    <tr><td>meetings_list</td><td>{{ object.meetings_list }}</td></tr>
+    <tr><td>images_list</td><td>{{ object.images_list }}</td></tr>
+    <tr><td>user_liked_list</td><td>{{ object.user_liked_list }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
