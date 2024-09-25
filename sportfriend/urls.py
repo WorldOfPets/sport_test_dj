@@ -3,7 +3,7 @@ from rest_framework import routers
 
 from . import api
 from . import views
-
+from sportfriend.api import SwaggerSchemaView
 
 router = routers.DefaultRouter()
 router.register("Chat", api.ChatViewSet)
@@ -16,6 +16,7 @@ router.register("SportCategory", api.SportCategoryViewSet)
 router.register("SportFriends", api.SportFriendsViewSet)
 router.register("UserChat", api.UserChatViewSet)
 router.register("UserInfo", api.UserInfoViewSet)
+router.register("User", api.UserViewSet)
 
 urlpatterns = (
     path("api/v1/", include(router.urls)),

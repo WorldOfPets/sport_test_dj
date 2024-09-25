@@ -17,13 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from rest_framework_swagger.views import get_swagger_view
+from sportfriend.api import SwaggerSchemaView
 
 
 urlpatterns = [
+    path('docs/', SwaggerSchemaView.as_view()),
     path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('sportfriend/', include('sportfriend.urls')),
     path('admin/', admin.site.urls),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
+    
     
 ]

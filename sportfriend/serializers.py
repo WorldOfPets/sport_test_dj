@@ -1,5 +1,5 @@
 from rest_framework import serializers
-
+from django.contrib.auth.models import User
 from . import models
 
 
@@ -146,4 +146,15 @@ class UserInfoSerializer(serializers.ModelSerializer):
             "meetings_list",
             "images_list",
             "user_liked_list",
+        ]
+
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = [
+            "first_name",
+            "last_name",
+            "username",
+            "email",
         ]
